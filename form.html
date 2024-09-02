@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Farmers Market</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- link for Font -->
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;  
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+    
+        body {
+            background-image: url('https://images.unsplash.com/photo-1486754735734-325b5831c3ad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        
+        button {
+            background-color: #4A5568; 
+            color: white; 
+            border: none;
+            padding: 0.375rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500; 
+            cursor: pointer;
+            border-radius: 0.25rem; 
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2D3748; /* Darker shade of gray on hover */
+        }
+    </style>
+
+    <!-- Basic Styleing is Over -->
+</head>
+
+
+<body class="bg-gray-100 text-gray-800">
+    <!-- Register Page -->
+    <div id="registerPage" class="max-w-xl mx-auto mt-10 p-8 bg-white bg-opacity-80 shadow-lg rounded-lg">
+        <h1 class="text-2xl font-bold text-gray-700 text-center mb-6">Register User</h1>
+        <form id="registerForm">
+
+            <div class="mb-4">
+                <label for="fullName" class="block text-gray-700 font-bold">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter Your Full Name">
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-bold">Email</label>
+                <input type="email" id="email" name="email" required class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter Your Email">
+            </div>
+
+            <div class="mb-4">
+                <label for="phoneNumber" class="block text-gray-700 font-bold">Phone Number</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter Your Phone Number" >
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700 font-bold">Password</label>
+                <input type="password" id="password" name="password" required class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter Your Password">
+                <p id="passwordHelp" class="text-sm text-red-500 mt-2 hidden">Password must be at least 8 characters long, contain both uppercase and lowercase letters, and include at least one number or special character.</p>
+            </div>
+
+            <div class="mb-4">
+                <label for="confirmPassword" class="block text-gray-700 font-bold">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Re-type Your Password">
+                <p id="confirmPasswordHelp" class="text-sm text-red-500 mt-2 hidden">Passwords do not match.</p>
+            </div>
+
+            <div class="mb-6">
+                <label for="userType" class="block text-gray-700 font-bold">I am a</label>
+                <select id="userType" name="userType" required class="w-full p-2 border border-gray-300 rounded mt-1">
+                    <option value="farmer">Farmer</option>
+                    <option value="buyer">Buyer</option>
+                </select>
+            </div>
+
+            <button type="submit" class="w-full">Register</button>
+            <p class="mt-4 text-center text-gray-700">have an account? <a href="log.html" class="text-teal-500 hover:underline">log-in</a></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const passwordHelp = document.getElementById('passwordHelp');
+            const confirmPasswordHelp = document.getElementById('confirmPasswordHelp');
+
+            // Regular expression for the password
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+            // Check if the password meets the criteria
+            if (!passwordRegex.test(password)) {
+                event.preventDefault();
+                passwordHelp.classList.remove('hidden');
+            } else {
+                passwordHelp.classList.add('hidden');
+            }
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                event.preventDefault();
+                confirmPasswordHelp.classList.remove('hidden');
+            } else {
+                confirmPasswordHelp.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
