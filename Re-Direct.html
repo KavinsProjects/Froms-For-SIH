@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us Redesign</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1486754735734-325b5831c3ad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');  
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black; /* Changed the text color to black */
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn a {
+            background-color:#007BFF;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn a:hover {
+            background-color:#5B7C99 ; /* Darker shade of blue for hover effect */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="content">
+            <h1>Welcome to Farmers Direct Access</h1>
+            <p>Connecting Farmers with Buyers directly.</p>
+            <div class="btn">
+                <a href="#" class="block">Register as Farmer</a>
+                --------- OR ---------
+                <a href="#" class="block">Buyer</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

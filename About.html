@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us Redesign</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s ease;
+        }
+
+        /* Adjusted About Us section */
+        .about-section {
+            background-color: #f3f4f6; 
+            padding: 50px 0;
+        }
+
+        .about-text h5 {
+            font-size: 2.5rem;
+            color: #333333; 
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .about-text h4 {
+            font-size: 2rem; 
+            color: #444444; 
+            font-weight: bold; 
+            margin-bottom: 15px;
+            text-align: center; 
+        }
+
+        .about-text p {
+            font-size: 1.25rem;
+            color: #555555; 
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 15px auto; 
+            text-align: left; 
+        }
+
+        .about-text p br::before {
+            content: "";
+            display: block;
+            height: 2px;
+            background-color: #000000; 
+            margin: 20px 0; 
+        }
+
+        .about-image {
+            display: block;
+            max-width: 500px; 
+            margin: 30px auto;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .about-text h5 {
+                font-size: 2rem;
+            }
+
+            .about-text h4 {
+                font-size: 1.5rem;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+                margin: 10px auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-text h5 {
+                font-size: 1.5rem;
+            }
+
+            .about-text h4 {
+                font-size: 1.25rem;
+            }
+
+            .about-text p {
+                font-size: 0.875rem;
+                margin: 5px auto;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-100 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-green-700 text-white sticky-nav">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="#" class="text-2xl font-bold">Company Logo</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                    <li><a href="#" class="hover:text-gray-300">About</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Products</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Services</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+                </ul>
+            </nav>
+            <div>
+                <a href="#" class="bg-green-600 hover:bg-green-500 text-white py-2 px-4 rounded mx-2">Login</a>
+                <a href="#" class="bg-green-600 hover:bg-green-500 text-white py-2 px-4 rounded">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Us -->
+    <section class="about-section">
+        <div class="about-text">
+            <h5>About Us</h5>
+            <h4>Welcome to Farmers Direct Access!</h4>
+            <img src="https://eu-images.contentstack.com/v3/assets/bltdd43779342bd9107/blt163b2fdeef23ffcb/638f388569b13001e4b45a6b/farm-scene-corn-hauged-GettyImages-804698282_20SIZED_0.jpg?width=1280&auto=webp&quality=95&format=jpg&disable=upscale" 
+            alt="About Us Image" class="about-image">
+            <p>
+                <b>’We'er</b> dedicated to bridging the gap between local farmers and the community.
+                Our mission is simple: to make fresh, high-quality produce directly available to you while supporting
+                and empowering the hardworking farmers who grow it.
+            </p>
+            <p>
+                <strong>Story <br></strong> 
+                Founded in [Year] by [Founder’s Name(s)], our journey began with a passion for sustainable agriculture
+                and supporting local economies. We saw an opportunity to create a platform that connects consumers with
+                farmers in a meaningful way, ensuring fair and direct transactions.
+            </p>
+            <p>
+                <strong>We Do <br></strong> 
+                Our platform provides a seamless way to access fresh produce directly from farmers. We believe in
+                transparency and quality, which is why we ensure that every farmer listed on our site meets our high
+                standards for sustainability and excellence.
+            </p>
+            <p>
+                <strong>Choose Us? <br></strong> 
+                Freshness Guaranteed: Our produce is picked at peak ripeness and delivered straight to your door.
+                Support Local: By purchasing through our platform, you’re directly supporting local farmers and contributing to the sustainability of your community.
+                Fair Trade: We facilitate fair transactions, ensuring that farmers receive a fair price for their hard work.
+            </p>
+            <p>
+                Thank you for visiting Farmers Direct Access. Together, let’s support our farmers and enjoy the freshest produce available.
+                Warm regards,
+                <strong>Farmers Direct Access Team</strong> 
+            </p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar hide on scroll
+            let lastScrollTop = 0;
+            const navbar = document.querySelector('.sticky-nav');
+            window.addEventListener('scroll', () => {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop) {
+                    navbar.style.top = '-60px'; // Adjust based on your navbar height
+                } else {
+                    navbar.style.top = '0';
+                }
+                lastScrollTop = scrollTop;
+            });
+        });
+    </script>
+</body>
+</html>
